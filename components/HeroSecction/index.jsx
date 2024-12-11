@@ -44,10 +44,10 @@ export default () => {
                         }
                     </div>
                     <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        EV-LOGO
                     </h1>
                     <p className="max-w-xl mx-auto xl:mx-0">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cupiditate, est neque reprehenderit sint fugit deleniti. Illo eos voluptate dolorum.
+                    EV-Logo: Seamlessly transfer your videos with advanced encryption, ensuring top-tier security and peace of mind.
                     </p>
                     <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 xl:justify-start">
                         <Link href="upload" className="flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex">
@@ -66,7 +66,7 @@ export default () => {
                 </div>
                 <div className="flex-1 max-w-xl mx-auto mt-14 xl:mt-0">
                     <div className="relative">
-                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="rounded-lg" alt="" />
+                        <img src="logo.jpg" className="rounded-lg" alt="" />
                         <button className="absolute w-16 h-16 rounded-full inset-0 m-auto duration-150 bg-blue-500 hover:bg-blue-600 ring-offset-2 focus:ring text-white"
                             onClick={() => setVideoPopUp(true)}
                         >
@@ -86,7 +86,7 @@ export default () => {
                                 className="w-12 h-12 mb-5 rounded-full duration-150 bg-gray-800 hover:bg-gray-700 text-white"
                                 onClick={() => setVideoPopUp(false)}
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 m-auto">
+                                <svg xmlns="logo.jpg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 m-auto">
                                     <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
                                 </svg>
                             </button>
