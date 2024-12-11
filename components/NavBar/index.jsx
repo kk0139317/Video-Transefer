@@ -24,7 +24,10 @@ export default () => {
                             height={50}
                             alt="Float UI logo"
                         /> */}
+                        <span className='text-2xl font-extrabold' >
+
                         LOGO
+                        </span>
                     </a>
                   <div className="md:hidden">
                       <button className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
@@ -60,7 +63,7 @@ export default () => {
                   </ul>
               </div>
               <div className="hidden md:inline-block">
-                <a href="javascript:void(0)" className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
+                <a href="/upload" className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
                     Get Started
                 </a>
               </div>
