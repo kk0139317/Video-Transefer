@@ -10,8 +10,8 @@ export default function UploadChunkedPage() {
   const [uniqueId, setUniqueId] = useState(""); // Store the unique ID
   const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   const chunkSize = 5 * 1024 * 1024; // 5MB per chunk
-  const FRONTEND_URL = process.env.FRONTEND_URL
-  const BACKEND_URL = process.env.BACKEND_URL
+  const FRONTEND_URL = process.env.FRONTEND_URL;
+  const BACKEND_URL = process.env.BACKEND_URL;
 
   // Get CSRF token from the cookie or response header
   useEffect(() => {
@@ -91,7 +91,6 @@ export default function UploadChunkedPage() {
     }
 
     setShowPopup(true); // Show popup after upload completion
-    // alert("File upload complete!");
   };
 
   const handleCopy = () => {
@@ -102,23 +101,33 @@ export default function UploadChunkedPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-xl font-semibold text-gray-800 mb-4">Upload Your video</h1>
-        <input
-          type="file"
-          onChange={handleFileChange}
-          className="block w-full px-3 py-2 mb-4 text-sm text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-        <button
-          onClick={handleUpload}
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
-        >
-          Upload
-        </button>
-        <div className="mt-6">
-          <h2 className="text-sm font-medium text-gray-700 mb-2">Progress: {progress}%</h2>
-          <div className="w-full h-2 bg-gray-200 rounded-lg overflow-hidden">
+    <div className="relative bg-gradient-to-r from-indigo-700 via-purple-700 to-blue-900 min-h-screen flex flex-col items-center justify-center p-8">
+      {/* Background Animation */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 animate-pulse bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 opacity-30"></div>
+      
+      {/* Upload Section */}
+      <div className="relative z-10 bg-white bg-opacity-20 backdrop-blur-lg p-8 rounded-xl shadow-2xl w-full max-w-md text-center">
+        <h2 className="text-4xl font-bold text-white mb-6 text-shadow">Upload Your Video</h2>
+        <p className="text-lg text-white mb-6">Share your content with the world by uploading your video file. It’s quick and easy!</p>
+
+        <div className="mb-6">
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="block w-full p-3 mb-4 text-sm text-gray-800 border border-gray-300 rounded-xl bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <button
+            onClick={handleUpload}
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-xl shadow-md hover:opacity-90 transition"
+          >
+            Start Upload
+          </button>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mt-4">
+          <h3 className="text-sm font-medium text-gray-100 mb-2">Progress: {progress}%</h3>
+          <div className="w-full h-2 bg-gray-300 rounded-lg overflow-hidden">
             <div
               className={`h-full ${progress === 100 ? "bg-green-500" : "bg-blue-500"}`}
               style={{ width: `${progress}%` }}
@@ -127,26 +136,31 @@ export default function UploadChunkedPage() {
         </div>
       </div>
 
-      {/* Popup for showing video URL */}
+      {/* Popup for video URL */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
-            <h2 className="text-lg font-medium text-gray-800 mb-4">File Uploaded Successfully!</h2>
-            <p className="text-gray-700 mb-4">
-              Your video URL: <span className="text-blue-600">{`${FRONTEND_URL}/video/${uniqueId}`}</span>
+          <div className="bg-white bg-opacity-90 backdrop-blur-lg p-8 rounded-xl shadow-2xl w-full max-w-md">
+            <h2 className="text-2xl font-medium text-gray-800 mb-4 text-center">Upload Successful!</h2>
+            <p className="text-gray-700 mb-4 text-center">
+              Your video is ready for sharing! Access it anytime by clicking the link below:
             </p>
-            <button
-              onClick={handleCopy}
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition mb-4"
-            >
-              Copy URL
-            </button>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="w-full bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-400 transition"
-            >
-              Close
-            </button>
+            <p className="text-blue-600 text-center mb-4">
+              {`${FRONTEND_URL}/video/${uniqueId}`}
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={handleCopy}
+                className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition"
+              >
+                Copy URL
+              </button>
+              <button
+                onClick={() => setShowPopup(false)}
+                className="bg-gray-300 text-gray-800 py-2 px-6 rounded-lg shadow-md hover:bg-gray-400 transition"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
