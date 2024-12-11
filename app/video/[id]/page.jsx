@@ -38,8 +38,8 @@ export default function VideoPage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl">
         <h1 className="text-xl font-semibold text-gray-800 mb-4">Video Player</h1>
-        <video controls className="w-full mb-4">
-          <source src={videoUrl} type="video/mp4" />
+        <video controls className="w-full mb-4 h-[500px] ">
+          <source src={videoUrl} type="video/mp4"   />
           Your browser does not support the video tag.
         </video>
         <a
