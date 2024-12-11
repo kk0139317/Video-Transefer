@@ -133,7 +133,7 @@ export default function UploadChunkedPage() {
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
             <h2 className="text-lg font-medium text-gray-800 mb-4">File Uploaded Successfully!</h2>
             <p className="text-gray-700 mb-4">
-              Your video URL: <span className="text-blue-600">{`${BACKEND_URL}/video/${uniqueId}`}</span>
+              Your video URL: <span className="text-blue-600">{`${FRONTEND_URL}/video/${uniqueId}`}</span>
             </p>
             <button
               onClick={handleCopy}
