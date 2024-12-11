@@ -34,14 +34,14 @@ export default () => {
             <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 xl:flex">
                 <div className="space-y-5 max-w-2xl mx-auto text-center xl:text-left">
                     <div className="flex flex-wrap items-center justify-center gap-6 xl:justify-start">
-                        {
+                        {/* {
                             features.map((item, idx) => (
                                 <div key={idx} className="flex items-center gap-x-2 text-gray-500 text-sm">
                                     {item.icon}
                                     {item.name}
                                 </div>
                             ))
-                        }
+                        } */}
                     </div>
                     <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
                         EV-LOGO
