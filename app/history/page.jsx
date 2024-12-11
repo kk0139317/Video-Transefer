@@ -1,4 +1,5 @@
 'use client'
+import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
 
 export default () => {
@@ -49,6 +50,8 @@ export default () => {
   };
 
   return (
+    <>
+    <NavBar />
     <div className="max-w-screen-xl mx-auto mt-20 px-6 md:px-8">
       <div className="text-center mb-8">
         <h3 className="text-3xl font-bold text-indigo-600">File Upload History</h3>
@@ -79,7 +82,7 @@ export default () => {
                   <button
                     onClick={() => handlePlay(item.file_id)}
                     className="px-4 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded-full transition duration-300"
-                  >
+                    >
                     Play
                   </button>
                   </td>
@@ -94,9 +97,9 @@ export default () => {
                   {/* <button
                     onClick={() => handleDelete(item.file_id)}
                     className="px-4 py-2 text-white bg-red-600 hover:bg-red-700 rounded-full transition duration-300"
-                  >
+                    >
                     Delete
-                  </button> */}
+                    </button> */}
               </tr>
             ))}
           </tbody>
@@ -105,7 +108,7 @@ export default () => {
 
       {/* Share URL Dialog */}
       {showShareDialog && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60">
+          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-60">
           <div className="bg-white p-6 rounded-lg max-w-sm w-full shadow-lg">
             <h4 className="text-xl font-semibold text-center mb-4">Share File</h4>
             <div className="mb-4">
@@ -114,19 +117,19 @@ export default () => {
                 readOnly
                 value={shareUrl}
                 className="w-full px-4 py-2 border rounded-lg shadow-sm text-gray-700"
-              />
+                />
             </div>
             <div className="flex justify-between items-center">
               <button
                 onClick={handleCopy}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
-              >
+                >
                 Copy URL
               </button>
               <button
                 onClick={handleCloseDialog}
                 className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition duration-300"
-              >
+                >
                 Close
               </button>
             </div>
@@ -134,5 +137,6 @@ export default () => {
         </div>
       )}
     </div>
+      </>
   );
 };
