@@ -41,6 +41,23 @@ export default () => {
     setShowShareDialog(false);
   };
 
+  const handledelete = (id) => {
+    fetch(`${BACKEND_URL}/api/file-uploads/${id}/`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("File deleted successfully!");
+          // Update the local state to remove the deleted item
+          setHistoryItems((prevItems) => prevItems.filter((item) => item.file_id !== id));
+        } else {
+          alert("Failed to delete the file. Please try again.");
+        }
+      })
+      .catch((error) => console.error("Error deleting the file:", error));
+  };
+  
+
   return (
     <>
       <NavBar />
@@ -98,6 +115,13 @@ export default () => {
                     >
                       Share
                     </button>
+                    <button
+  onClick={() => handledelete(item.file_id)}
+  className="px-4 py-2 bg-red-500 text-white rounded-full shadow hover:bg-red-600 transition"
+>
+  Delete
+</button>
+
                   </td>
                 </tr>
               ))}
