@@ -42,8 +42,8 @@ export default () => {
   };
 
   const handledelete = (id) => {
-    fetch(`${BACKEND_URL}/api/file-uploads/${id}/`, {
-      method: "DELETE",
+    fetch(`${BACKEND_URL}/api/file-delete/${id}`, {
+      method: "GET",
     })
       .then((response) => {
         if (response.ok) {

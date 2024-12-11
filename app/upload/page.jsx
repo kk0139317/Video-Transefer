@@ -11,6 +11,7 @@ export default function UploadChunkedPage() {
   const [uniqueId, setUniqueId] = useState(""); // Store the unique ID
   const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   const [isUploading, setIsUploading] = useState(false); // Track upload status
+  const [recentUploads, setRecentUploads] = useState([]); // State to store recent uploads
   const chunkSize = 5 * 1024 * 1024; // 5MB per chunk
   const FRONTEND_URL = process.env.FRONTEND_URL;
   const BACKEND_URL = process.env.BACKEND_URL;
@@ -21,7 +22,24 @@ export default function UploadChunkedPage() {
     if (token) {
       setCsrfToken(token.split('=')[1]);
     }
+
+    fetchRecentUploads(); // Fetch recent uploads
   }, []);
+
+  const fetchRecentUploads = async () => {
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/recent-uploads/`, {
+        method: "GET",
+        headers: {
+          'X-CSRFToken': csrfToken,
+        }
+      });
+      const data = await res.json();
+      setRecentUploads(data); // Update the recent uploads state
+    } catch (error) {
+      console.error("Error fetching recent uploads:", error);
+    }
+  };
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -96,6 +114,7 @@ export default function UploadChunkedPage() {
       currentChunkIndex++;
     }
 
+    fetchRecentUploads(); // Refresh recent uploads after successful upload
     setShowPopup(true); // Show popup after upload completion
     setIsUploading(false); // Enable button after upload completes
   };
@@ -104,6 +123,31 @@ export default function UploadChunkedPage() {
     const videoUrl = `${FRONTEND_URL}/video/${uniqueId}`;
     navigator.clipboard.writeText(videoUrl).then(() => {
       alert("URL copied to clipboard!");
+    });
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this video?")) {
+      try {
+        await fetch(`${BACKEND_URL}/api/delete-video/${id}/`, {
+          method: "DELETE",
+          headers: {
+            'X-CSRFToken': csrfToken,
+          }
+        });
+        alert("Video deleted successfully!");
+        fetchRecentUploads(); // Refresh the recent uploads
+      } catch (error) {
+        console.error("Error deleting video:", error);
+        alert("Failed to delete the video.");
+      }
+    }
+  };
+
+  const handleShare = (id) => {
+    const videoUrl = `${FRONTEND_URL}/video/${id}`;
+    navigator.clipboard.writeText(videoUrl).then(() => {
+      alert("Video URL copied to clipboard!");
     });
   };
 
@@ -146,6 +190,39 @@ export default function UploadChunkedPage() {
           </div>
         </div>
 
+        {/* Recent Uploads Section */}
+        <div className="relative z-10 bg-white p-8 rounded-xl shadow-lg w-full max-w-md mt-10 text-center">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Recent Uploads</h2>
+          {recentUploads.length === 0 ? (
+            <p className="text-gray-500">No recent uploads found.</p>
+          ) : (
+            <ul className="space-y-4">
+              {recentUploads.map((upload) => (
+                <li key={upload.id} className="flex justify-between items-center">
+                  <div>
+                    <p className="text-lg text-gray-900">{upload.fileName}</p>
+                    <p className="text-sm text-gray-500">{new Date(upload.uploadDate).toLocaleString()}</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <button
+                      onClick={() => handleShare(upload.id)}
+                      className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600"
+                    >
+                      Share
+                    </button>
+                    <button
+                      onClick={() => handleDelete(upload.id)}
+                      className="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
         {/* Popup for video URL */}
         {showPopup && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -160,13 +237,13 @@ export default function UploadChunkedPage() {
               <div className="flex justify-center gap-4">
                 <button
                   onClick={handleCopy}
-                  className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition-transform transform hover:scale-105"
+                  className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600"
                 >
                   Copy URL
                 </button>
                 <button
                   onClick={() => setShowPopup(false)}
-                  className="bg-gray-200 text-gray-800 py-2 px-6 rounded-lg shadow-md hover:bg-gray-300 transition-transform transform hover:scale-105"
+                  className="bg-gray-200 text-gray-800 py-2 px-6 rounded-lg shadow-md hover:bg-gray-300"
                 >
                   Close
                 </button>

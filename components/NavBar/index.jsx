@@ -26,7 +26,7 @@ export default () => {
                         /> */}
                         <span className='text-2xl font-extrabold' >
 
-                        LOGO
+                        EV-LOGO
                         </span>
                     </Link>
                   <div className="md:hidden">
