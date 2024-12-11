@@ -1,0 +1,262 @@
+{
+    "questions": [
+      {
+        "question": "Which ancient Indian text is considered a philosophical work?",
+        "options": [
+          "a) Bhagavad Gita",
+          "b) Ramayana",
+          "c) Mahabharata",
+          "d) Vedas"
+        ],
+        "correctAnswer": "a) Bhagavad Gita",
+        "explanation": "The Bhagavad Gita is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata, known for its philosophical teachings."
+      },
+      {
+        "question": "Which ancient Indian text is a compilation of hymns?",
+        "options": [
+          "a) Rigveda",
+          "b) Samaveda",
+          "c) Yajurveda",
+          "d) Atharvaveda"
+        ],
+        "correctAnswer": "a) Rigveda",
+        "explanation": "The Rigveda is one of the oldest texts and is a compilation of hymns dedicated to various deities."
+      },
+      {
+        "question": "Who was the first Mauryan emperor of India?",
+        "options": [
+          "a) Ashoka",
+          "b) Chandragupta Maurya",
+          "c) Bindusara",
+          "d) Harsha"
+        ],
+        "correctAnswer": "b) Chandragupta Maurya",
+        "explanation": "Chandragupta Maurya was the founder of the Maurya Empire and the first emperor of India."
+      },
+      {
+        "question": "Which ancient Indian king is known for his edicts on ethics and governance?",
+        "options": [
+          "a) Ashoka",
+          "b) Vikramaditya",
+          "c) Chandragupta Maurya",
+          "d) Akbar"
+        ],
+        "correctAnswer": "a) Ashoka",
+        "explanation": "Ashoka is known for his edicts promoting moral values and governance based on Dharma."
+      },
+      {
+        "question": "Which Indian dynasty is known for the establishment of the Gupta Empire?",
+        "options": [
+          "a) Maurya",
+          "b) Kushan",
+          "c) Gupta",
+          "d) Chola"
+        ],
+        "correctAnswer": "c) Gupta",
+        "explanation": "The Gupta dynasty established the Gupta Empire, known as a golden age of art, science, and literature in India."
+      },
+      {
+        "question": "Which ancient Indian text is attributed to the sage Valmiki?",
+        "options": [
+          "a) Ramayana",
+          "b) Mahabharata",
+          "c) Vedas",
+          "d) Puranas"
+        ],
+        "correctAnswer": "a) Ramayana",
+        "explanation": "The Ramayana, an epic poem, is attributed to the sage Valmiki and narrates the life of Lord Rama."
+      },
+      {
+        "question": "Who is considered the 'Father of Indian Astronomy'?",
+        "options": [
+          "a) Aryabhata",
+          "b) Bhaskara",
+          "c) Brahmagupta",
+          "d) Varahamihira"
+        ],
+        "correctAnswer": "a) Aryabhata",
+        "explanation": "Aryabhata is regarded as the 'Father of Indian Astronomy' for his pioneering work in mathematics and astronomy."
+      },
+      {
+        "question": "Which Indian ruler was known for his tolerance towards different religions?",
+        "options": [
+          "a) Ashoka",
+          "b) Aurangzeb",
+          "c) Akbar",
+          "d) Chandragupta"
+        ],
+        "correctAnswer": "c) Akbar",
+        "explanation": "Akbar is known for his policy of religious tolerance and promoting a syncretic culture in his empire."
+      },
+      {
+        "question": "Which ancient Indian civilization is known for its urban planning and architecture?",
+        "options": [
+          "a) Harappan Civilization",
+          "b) Mauryan Civilization",
+          "c) Gupta Civilization",
+          "d) Vedic Civilization"
+        ],
+        "correctAnswer": "a) Harappan Civilization",
+        "explanation": "The Harappan Civilization, also known as the Indus Valley Civilization, is known for its advanced urban planning and architecture."
+      },
+      {
+        "question": "What is the oldest surviving text in Sanskrit?",
+        "options": [
+          "a) Vedas",
+          "b) Upanishads",
+          "c) Puranas",
+          "d) Mahabharata"
+        ],
+        "correctAnswer": "a) Vedas",
+        "explanation": "The Vedas are the oldest surviving texts in Sanskrit, consisting of hymns, rituals, and philosophical teachings."
+      },
+      {
+        "question": "Which famous ancient Indian university was known for its scholars and learning?",
+        "options": [
+          "a) Nalanda",
+          "b) Takshashila",
+          "c) Vikramshila",
+          "d) Kashi"
+        ],
+        "correctAnswer": "a) Nalanda",
+        "explanation": "Nalanda University was one of the first residential universities in the world and an important center for learning in ancient India."
+      },
+      {
+        "question": "Which of the following was the first metal used by ancient Indians?",
+        "options": [
+          "a) Iron",
+          "b) Copper",
+          "c) Bronze",
+          "d) Silver"
+        ],
+        "correctAnswer": "b) Copper",
+        "explanation": "Copper was the first metal used by ancient Indians, notably during the Chalcolithic period."
+      },
+      {
+        "question": "Which ancient text contains discussions on statecraft and military strategy?",
+        "options": [
+          "a) Arthashastra",
+          "b) Manusmriti",
+          "c) Vatsyayana",
+          "d) Sushruta Samhita"
+        ],
+        "correctAnswer": "a) Arthashastra",
+        "explanation": "The Arthashastra, written by Kautilya (Chanakya), is a treatise on statecraft, military strategy, and economic policy."
+      },
+      {
+        "question": "The concept of zero as a numeral was first developed in ancient India by which mathematician?",
+        "options": [
+          "a) Aryabhata",
+          "b) Brahmagupta",
+          "c) Bhaskara I",
+          "d) Varahamihira"
+        ],
+        "correctAnswer": "b) Brahmagupta",
+        "explanation": "Brahmagupta was the first to formalize the rules for using zero in calculations in his work Brahmasphutasiddhanta."
+      },
+      {
+        "question": "Who is regarded as the founder of the Mauryan Empire?",
+        "options": [
+          "a) Ashoka",
+          "b) Chandragupta Maurya",
+          "c) Bindusara",
+          "d) Harsha"
+        ],
+        "correctAnswer": "b) Chandragupta Maurya",
+        "explanation": "Chandragupta Maurya founded the Mauryan Empire after overthrowing the Nanda dynasty."
+      },
+      {
+        "question": "Which of the following was a major trade route in ancient India?",
+        "options": [
+          "a) Silk Route",
+          "b) Spice Route",
+          "c) Cotton Route",
+          "d) Both a and b"
+        ],
+        "correctAnswer": "d) Both a and b",
+        "explanation": "Both the Silk Route and the Spice Route were significant trade routes that connected ancient India with the rest of the world."
+      },
+      {
+        "question": "Which ruler is famous for the Rock Edicts found across India?",
+        "options": [
+          "a) Ashoka",
+          "b) Samudragupta",
+          "c) Chandragupta",
+          "d) Harsha"
+        ],
+        "correctAnswer": "a) Ashoka",
+        "explanation": "Ashoka's Rock Edicts are inscriptions that promote the moral and ethical principles of Buddhism."
+      },
+      {
+        "question": "What was the primary language of administration during the Mauryan Empire?",
+        "options": [
+          "a) Sanskrit",
+          "b) Prakrit",
+          "c) Pali",
+          "d) Tamil"
+        ],
+        "correctAnswer": "b) Prakrit",
+        "explanation": "Prakrit was widely used as a language of administration and communication during the Mauryan Empire."
+      },
+      {
+        "question": "Which ancient Indian text is known for its medical knowledge?",
+        "options": [
+          "a) Charaka Samhita",
+          "b) Sushruta Samhita",
+          "c) Both a and b",
+          "d) Vedas"
+        ],
+        "correctAnswer": "c) Both a and b",
+        "explanation": "Both Charaka Samhita and Sushruta Samhita are ancient texts known for their contributions to medicine and surgery."
+      },
+      {
+        "question": "The term 'Brahmin' refers to which of the following?",
+        "options": [
+          "a) Warrior class",
+          "b) Merchant class",
+          "c) Priest class",
+          "d) Labor class"
+        ],
+        "correctAnswer": "c) Priest class",
+        "explanation": "In ancient India, Brahmins were considered the priestly class responsible for religious rituals and the study of sacred texts."
+      },
+      {
+        "question": "The city of Pataliputra was the capital of which ancient Indian empire?",
+        "options": [
+          "a) Gupta Empire",
+          "b) Mauryan Empire",
+          "c) Chola Empire",
+          "d) Mughal Empire"
+        ],
+        "correctAnswer": "b) Mauryan Empire",
+        "explanation": "Pataliputra, modern-day Patna, was the capital city of the Mauryan Empire."
+      },
+      {
+        "question": "Which ancient Indian epic narrates the story of the Kurukshetra War?",
+        "options": [
+          "a) Ramayana",
+          "b) Mahabharata",
+          "c) Puranas",
+          "d) Vedas"
+        ],
+        "correctAnswer": "b) Mahabharata",
+        "explanation": "The Mahabharata narrates the story of the Kurukshetra War and the fates of the Kaurava and Pandava princes."
+      },
+      {
+        "question": "The concept of 'Dharma' in ancient India refers to which of the following?",
+        "options": [
+          "a) Wealth",
+          "b) Duty",
+          "c) Liberation",
+          "d) Pleasure"
+        ],
+        "correctAnswer": "b) Duty",
+        "explanation": "'Dharma' refers to duty, moral law, and righteousness in ancient Indian philosophy."
+      }
+    ],
+    "format": {
+      "type": "quiz",
+      "language": "Hindi"
+    }
+  }
+  
