@@ -9,18 +9,19 @@ export default function VideoPage() {
   const [downloadUrl, setDownloadUrl] = useState(""); // URL for downloading the video
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
+  const BACKEND_URL = process.env.BACKEND_URL
+  
   useEffect(() => {
     if (id) {
       // Fetch the video URL from the backend using the unique ID
-      fetch(`http://127.0.0.1:8000/api/videos/${id}/stream/`)
+      fetch(`${BACKEND_URL}/api/videos/${id}/stream/`)
         .then((res) => {
           if (!res.ok) throw new Error("Video not found");
           return res.url; // Direct stream URL
         })
         .then((streamUrl) => {
           setVideoUrl(streamUrl);
-          setDownloadUrl(`http://127.0.0.1:8000/api/videos/${id}/download/`); // Construct download URL
+          setDownloadUrl(`${BACKEND_URL}/api/videos/${id}/download/`); // Construct download URL
           setLoading(false);
         })
         .catch(() => {

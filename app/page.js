@@ -10,6 +10,8 @@ export default function UploadChunkedPage() {
   const [uniqueId, setUniqueId] = useState(""); // Store the unique ID
   const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   const chunkSize = 5 * 1024 * 1024; // 5MB per chunk
+  const FRONTEND_URL = process.env.FRONTEND_URL
+  const BACKEND_URL = process.env.BACKEND_URL
 
   // Get CSRF token from the cookie or response header
   useEffect(() => {
@@ -34,7 +36,7 @@ export default function UploadChunkedPage() {
     formData.append("fileSize", file.size);  // Send the total file size
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/upload-chunk/", {
+      const res = await fetch(`${BACKEND_URL}/api/upload-chunk/`, {
         method: "POST",
         headers: {
           'X-CSRFToken': csrfToken, // Send CSRF token here
@@ -93,7 +95,7 @@ export default function UploadChunkedPage() {
   };
 
   const handleCopy = () => {
-    const videoUrl = `http://127.0.0.1:3000/video/${uniqueId}`;
+    const videoUrl = `${FRONTEND_URL}/video/${uniqueId}`;
     navigator.clipboard.writeText(videoUrl).then(() => {
       alert("URL copied to clipboard!");
     });
@@ -131,7 +133,7 @@ export default function UploadChunkedPage() {
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
             <h2 className="text-lg font-medium text-gray-800 mb-4">File Uploaded Successfully!</h2>
             <p className="text-gray-700 mb-4">
-              Your video URL: <span className="text-blue-600">{`http://127.0.0.1:3000/video/${uniqueId}`}</span>
+              Your video URL: <span className="text-blue-600">{`${BACKEND_URL}/video/${uniqueId}`}</span>
             </p>
             <button
               onClick={handleCopy}
