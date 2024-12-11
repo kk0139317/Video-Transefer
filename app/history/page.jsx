@@ -1,6 +1,7 @@
 'use client'
 import NavBar from "@/components/NavBar";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default () => {
   const [historyItems, setHistoryItems] = useState([]);
