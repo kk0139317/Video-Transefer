@@ -130,7 +130,7 @@ export default function UploadChunkedPage() {
     if (window.confirm("Are you sure you want to delete this video?")) {
       try {
         await fetch(`${BACKEND_URL}/api/delete-video/${id}/`, {
-          method: "DELETE",
+          method: "GET",
           headers: {
             'X-CSRFToken': csrfToken,
           }
@@ -200,18 +200,18 @@ export default function UploadChunkedPage() {
               {recentUploads.map((upload) => (
                 <li key={upload.id} className="flex justify-between items-center">
                   <div>
-                    <p className="text-lg text-gray-900">{upload.fileName}</p>
-                    <p className="text-sm text-gray-500">{new Date(upload.uploadDate).toLocaleString()}</p>
+                    <p className="text-lg text-gray-900">{upload.file_name}</p>
+                    {/* <p className="text-sm text-gray-500">{new Date(upload.uploadDate).toLocaleString()}</p> */}
                   </div>
                   <div className="flex gap-4">
                     <button
-                      onClick={() => handleShare(upload.id)}
+                      onClick={() => handleShare(upload.file_id)}
                       className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600"
                     >
                       Share
                     </button>
                     <button
-                      onClick={() => handleDelete(upload.id)}
+                      onClick={() => handleDelete(upload.file_id)}
                       className="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600"
                     >
                       Delete

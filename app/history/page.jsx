@@ -42,7 +42,7 @@ export default () => {
   };
 
   const handledelete = (id) => {
-    fetch(`${BACKEND_URL}/api/file-delete/${id}`, {
+    fetch(`${BACKEND_URL}/api/delete-video/${id}/`, {
       method: "GET",
     })
       .then((response) => {
