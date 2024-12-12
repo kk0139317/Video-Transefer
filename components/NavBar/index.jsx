@@ -57,9 +57,9 @@ export default () => {
                                 key={idx} 
                                 className="text-gray-600 px-4 py-1 rounded-md hover:text-blue-700 hover:shadow-[0_0_10px_2px_rgba(29,78,216,0.5)] transition-all duration-300"
                             >
-                                <a href={item.path}>
+                                <Link href={item.path}>
                                     {item.title}
-                                </a>
+                                </Link>
                             </li>
                             
                               )
