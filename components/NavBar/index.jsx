@@ -16,18 +16,19 @@ export default () => {
   return (
       <nav className="bg-white w-full border-b md:border-0 md:static">
           <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-              <div className="flex items-center justify-between py-3 md:py-5 md:block">
+              <div className="flex items-center justify-between py-2  md:block">
                     <Link href="/">
-                        {/* <img
-                            src="https://www.floatui.com/logo.svg" 
-                            width={120} 
-                            height={50}
+                        <img
+                            src="logo-emage-group.png" 
+                            // width={120} 
+                            // height={30}
                             alt="Float UI logo"
-                        /> */}
-                        <span className='text-2xl font-extrabold' >
+                            className='h-14 w-40  '
+                        />
+                        {/* <span className='text-2xl font-extrabold' >
 
                         EV-LOGO
-                        </span>
+                        </span> */}
                     </Link>
                   <div className="md:hidden">
                       <button className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
@@ -52,11 +53,15 @@ export default () => {
                       {
                           navigation.map((item, idx) => {
                               return (
-                                <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                                    <a href={item.path}>
-                                        { item.title }
-                                    </a>
-                                </li>
+                                <li 
+                                key={idx} 
+                                className="text-gray-600 px-4 py-1 rounded-md hover:text-blue-700 hover:shadow-[0_0_10px_2px_rgba(29,78,216,0.5)] transition-all duration-300"
+                            >
+                                <a href={item.path}>
+                                    {item.title}
+                                </a>
+                            </li>
+                            
                               )
                           })
                       }
