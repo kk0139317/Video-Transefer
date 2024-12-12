@@ -23,7 +23,7 @@ export default () => {
   };
 
   const handlePlay = (id) => {
-    window.location.href = `${FRONTEND_URL}/video/${id}`;
+    window.location.href = `/video/${id}`;
   };
 
   const handleShare = (id) => {
