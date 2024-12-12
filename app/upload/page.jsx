@@ -200,7 +200,7 @@ export default function UploadChunkedPage() {
               {recentUploads.map((upload) => (
                 <li key={upload.id} className="flex justify-between items-center">
                   <div>
-                    <p className="text-lg text-gray-900">{upload.file_name}</p>
+                    <p className="text-xs text-gray-900">{upload.file_name}</p>
                     {/* <p className="text-sm text-gray-500">{new Date(upload.uploadDate).toLocaleString()}</p> */}
                   </div>
                   <div className="flex gap-4">
