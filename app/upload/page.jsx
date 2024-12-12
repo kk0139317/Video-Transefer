@@ -151,6 +151,11 @@ export default function UploadChunkedPage() {
     });
   };
 
+  const handlePlay = (id) => {
+    window.location.href = `/video/${id}`;
+  };
+
+
   return (
     <>
       <NavBar />
@@ -197,22 +202,33 @@ export default function UploadChunkedPage() {
             <p className="text-gray-500">No recent uploads found.</p>
           ) : (
             <ul className="space-y-4">
-              {recentUploads.map((upload) => (
+              {recentUploads.slice(-5).reverse().map((upload) => (
                 <li key={upload.id} className="flex justify-between items-center">
                   <div>
-                    <p className="text-xs text-gray-900">{upload.file_name}</p>
+                    {/* <p className="text-xs text-gray-900">{upload.file_name}</p> */}
+                    <input type="text" className=" w-52 px-2 border-s border-x border-y " 
+                    value={upload.file_name}
+                    placeholder={upload.file_name}
+                    readOnly
+                    />
                     {/* <p className="text-sm text-gray-500">{new Date(upload.uploadDate).toLocaleString()}</p> */}
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-1">
                     <button
                       onClick={() => handleShare(upload.file_id)}
-                      className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600"
+                      className="bg-blue-500 text-white py-0 px-2 h-6 rounded-lg text-xs  shadow-md hover:bg-red-600"
                     >
                       Share
                     </button>
+                  <button
+                      onClick={() => handlePlay(upload.file_id)}
+                      className="bg-green-500 text-white py-0 px-2 h-6 rounded-lg text-xs  shadow-md hover:bg-red-600"
+                    >
+                      Play
+                    </button>
                     <button
                       onClick={() => handleDelete(upload.file_id)}
-                      className="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600"
+                      className="bg-red-500 text-white py-0 px-2 h-6 rounded-lg text-xs  shadow-md hover:bg-red-600"
                     >
                       Delete
                     </button>
