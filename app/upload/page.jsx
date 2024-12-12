@@ -115,6 +115,7 @@ export default function UploadChunkedPage() {
     }
 
     fetchRecentUploads(); // Refresh recent uploads after successful upload
+    fetchHistory();
     setShowPopup(true); // Show popup after upload completion
     setIsUploading(false); // Enable button after upload completes
   };
@@ -167,13 +168,30 @@ export default function UploadChunkedPage() {
     return (bytes / (1024 * 1024)).toFixed(2);
   };
   
-  useEffect(() => {
-    fetch(`${BACKEND_URL}/api/file-uploads/`)
-      .then((response) => response.json())
-      .then((data) => setHistoryItems(data))
-      .catch((error) => console.error("Error fetching history data:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${BACKEND_URL}/api/file-uploads/`)
+  //     .then((response) => response.json())
+  //     .then((data) => setHistoryItems(data))
+  //     .catch((error) => console.error("Error fetching history data:", error));
+  // }, []);
 
+
+  const fetchHistory = async () => {
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/file-uploads/`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok' + response.statusText);
+      }
+      const data = await response.json();
+      setHistoryItems(data);
+    } catch (error) {
+      console.error("Error fetching history data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory(); // Fetch data on component mount
+  }, [BACKEND_URL]); // Dependencies for re-run when BACKEND_URL changes
 
   const handleCloseDialog = () => {
     setShowShareDialog(false);
@@ -297,7 +315,7 @@ export default function UploadChunkedPage() {
               </tr>
             </thead>
             <tbody className="divide-y">
-              {/* {historyItemsreverse().map((item, idx) => ( */}
+              {/* {historyItems.map((item, idx) => ( */}
                 {historyItems.slice(-5).reverse().map((item, idx) => (
                 <tr
                   key={idx}
