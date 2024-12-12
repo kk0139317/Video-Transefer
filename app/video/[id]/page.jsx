@@ -42,13 +42,13 @@ export default function VideoPage() {
           <source src={videoUrl} type="video/mp4"   />
           Your browser does not support the video tag.
         </video>
-        <a
+        {/* <a
           href={downloadUrl}
           className="inline-block px-6 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition"
           download
         >
           Download Video
-        </a>
+        </a> */}
       </div>
     </div>
   );
