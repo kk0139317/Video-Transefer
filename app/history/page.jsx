@@ -80,7 +80,7 @@ export default () => {
               </tr>
             </thead>
             <tbody className="divide-y">
-              {historyItems.map((item, idx) => (
+              {historyItems.reverse().map((item, idx)  => (
                 <tr
                   key={idx}
                   className="hover:bg-gray-100 transition duration-300 ease-in-out"

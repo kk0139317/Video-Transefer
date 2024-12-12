@@ -297,7 +297,7 @@ export default function UploadChunkedPage() {
               </tr>
             </thead>
             <tbody className="divide-y">
-              {/* {historyItems.map((item, idx) => ( */}
+              {/* {historyItemsreverse().map((item, idx) => ( */}
                 {historyItems.slice(-5).reverse().map((item, idx) => (
                 <tr
                   key={idx}
